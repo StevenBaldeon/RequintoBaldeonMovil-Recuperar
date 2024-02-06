@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RequintoBaldeonMovil.Views.LoginPage">
+
+    <ContentPage.Content>
+        <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <!-- Contenedor principal con imagen de fondo -->
+            <Image Source="Background.jpg" Aspect="AspectFill" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+
+            <!-- Contenedor de inicio de sesión con márgenes y bordes redondeados -->
+            <Frame VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Opacity="0.8" BackgroundColor="#d9d9d9" Padding="50" Margin="10" CornerRadius="50">
+                <StackLayout Spacing="5">
+                    <!-- Contenido actual del StackLayout -->
+
+                    <!-- Contenedor del logo -->
+                    <Image Source="Logo.png" WidthRequest="200" Margin="-10"  HorizontalOptions="CenterAndExpand"/>
+
+                    <!-- Título animado -->
+                    <Label Text="Iniciar Sesión" FontSize="24" TextColor="Black" HorizontalOptions="CenterAndExpand"/>
+
+                    <!-- Formulario de inicio de sesión -->
+                    <StackLayout>
+                        <!-- Etiqueta y campo de entrada para el usuario -->
+                        <Frame BackgroundColor="White" CornerRadius="10" Margin="10" Padding="1">
+                            <Entry x:Name="usernameEntry" Placeholder="Usuario" TextColor="White" />
+                        </Frame>
+
+
+                        <!-- Etiqueta y campo de entrada para la contraseña -->
+                        <Frame BackgroundColor="White" CornerRadius="10" Margin="10" Padding="1">
+                            <Entry x:Name="passwordEntry" Placeholder="Contraseña" TextColor="White" />
+                        </Frame>
+
+                        <!-- Botón de envío del formulario -->
+                        <Button x:Name="BtnIniciarSesion" Text="Iniciar Sesión" Clicked="BtnIniciarSesion_Clicked" BackgroundColor="#e9a512" TextColor="White"/>
+                    </StackLayout>
+
+                    <Label Text="© 2024 El Requinto Baldeón."  TextColor="Black" HorizontalOptions="Center" Opacity="0.4"/>
+                </StackLayout>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

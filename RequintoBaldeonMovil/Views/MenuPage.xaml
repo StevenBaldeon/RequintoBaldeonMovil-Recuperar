@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RequintoBaldeonMovil.Views.MenuPage"
+             Title="Menu" >
+
+    <StackLayout VerticalOptions="FillAndExpand"  >
+        <StackLayout Padding="40,40,40,0">
+            <Image Source="Logo.png" HeightRequest="100" />
+        </StackLayout>
+        <StackLayout  Orientation="Horizontal" Padding="20,0,20,0">
+            <Label x:Name="lblUser"  HorizontalOptions="StartAndExpand" VerticalTextAlignment="Center"/>
+            <ImageButton x:Name="btnLogout"  Source="Resena_Menu.png" BackgroundColor="Transparent" WidthRequest="50" Clicked="btnLogout_Clicked" HorizontalOptions="End">
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="Scale"
+                            Value="1" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="Pressed">
+                            <VisualState.Setters>
+                                <Setter Property="Scale"
+                            Value="0.85" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+            </ImageButton>
+            <ImageButton x:Name="btnLogin"  Source="login.png" BackgroundColor="Transparent" WidthRequest="50" HorizontalOptions="EndAndExpand" Clicked="btnLogin_Clicked" >
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="Scale"
+                            Value="1" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="Pressed">
+                            <VisualState.Setters>
+                                <Setter Property="Scale"
+                            Value="0.85" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+            </ImageButton>
+        </StackLayout>
+        <ListView  x:Name="ListViewMenu"
+                    HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <!--<Grid Padding="10" >-->
+                        <StackLayout VerticalOptions="FillAndExpand" Orientation="Horizontal" Padding="0,0,0,0">
+                            <Image Source="{Binding Icon}" WidthRequest="60" HeightRequest="45" />
+                            <Label Text="{Binding Title}" FontSize="20" VerticalTextAlignment="Center" TextColor="Black"/>
+                        </StackLayout>
+                        <!--</Grid>-->
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
