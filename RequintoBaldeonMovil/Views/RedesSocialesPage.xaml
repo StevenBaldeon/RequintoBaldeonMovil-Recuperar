@@ -2,11 +2,95 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RequintoBaldeonMovil.Views.RedesSocialesPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" Spacing="10">
+            <Label Text="{Binding Title}" FontAttributes="Bold" TextColor="White" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"/>
+            <Image Source="Logo_Blanco.png" HeightRequest="50" WidthRequest="100" HorizontalOptions="EndAndExpand" Margin="0,0,10,0"/>
         </StackLayout>
-    </ContentPage.Content>
+    </NavigationPage.TitleView>
+
+    <StackLayout Padding="20">
+
+        <!-- Título -->
+        <Label Text="Mis Redes Sociales"
+               FontSize="24"
+               HorizontalOptions="Center"
+               Margin="0,0,0,20"/>
+
+        <!-- Grid con dos columnas -->
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Facebook -->
+            <StackLayout Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center" Spacing="5">
+                <Frame Padding="10" BackgroundColor="LightGray" HasShadow="True" CornerRadius="10">
+                    <Image Source="Facebook.png" HeightRequest="50" WidthRequest="50" VerticalOptions="Center">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer  x:Name="TpFacebook" Tapped="TpFacebook_Tapped"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Frame>
+                <Label Text="Facebook" HorizontalOptions="Center"/>
+            </StackLayout>
+
+            <!-- Instagram -->
+            <StackLayout Grid.Row="0" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center" Spacing="5">
+                <Frame Padding="10" BackgroundColor="LightGray" HasShadow="True" CornerRadius="10">
+                    <Image Source="Instagram.png" HeightRequest="50" WidthRequest="50" VerticalOptions="Center">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="TpInstagram" Tapped="TpInstagram_Tapped" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Frame>
+                <Label Text="Instagram" HorizontalOptions="Center"/>
+            </StackLayout>
+
+            <!-- TikTok -->
+            <StackLayout Grid.Row="1" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center" Spacing="5">
+                <Frame Padding="10" BackgroundColor="LightGray" HasShadow="True" CornerRadius="10">
+                    <Image Source="TikTok.png" HeightRequest="50" WidthRequest="50" VerticalOptions="Center">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="TpTiktok" Tapped="TpTiktok_Tapped" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Frame>
+                <Label Text="TikTok" HorizontalOptions="Center"/>
+            </StackLayout>
+
+            <!-- YouTube -->
+            <StackLayout Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center" Spacing="5">
+                <Frame Padding="10" BackgroundColor="LightGray" HasShadow="True" CornerRadius="10">
+                    <Image Source="Youtube.png" HeightRequest="50" WidthRequest="50" VerticalOptions="Center">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="TpYoutube" Tapped="TpYoutube_Tapped" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Frame>
+                <Label Text="YouTube" HorizontalOptions="Center"/>
+            </StackLayout>
+
+            <!-- WhatsApp -->
+            <StackLayout Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="Center" VerticalOptions="Center" Spacing="5">
+                <Frame Padding="10" BackgroundColor="LightGray" HasShadow="True" CornerRadius="10">
+                    <Image Source="Whatsapp.png" HeightRequest="50" WidthRequest="50" VerticalOptions="Center">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="TpWhatsapp" Tapped="TpWhatsapp_Tapped" />
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Frame>
+                <Label Text="WhatsApp" HorizontalOptions="Center"/>
+            </StackLayout>
+        </Grid>
+
+    </StackLayout>
+
 </ContentPage>
