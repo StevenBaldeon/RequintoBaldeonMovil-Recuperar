@@ -4,6 +4,7 @@ using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
 using Android.OS;
+using Xamarin.Forms;
 
 namespace RequintoBaldeonMovil.Droid
 {
@@ -14,6 +15,7 @@ namespace RequintoBaldeonMovil.Droid
         {
             base.OnCreate(savedInstanceState);
 
+            Forms.SetFlags("CollectionView_Experimental");
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());

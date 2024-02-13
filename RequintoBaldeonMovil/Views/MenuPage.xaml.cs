@@ -59,7 +59,7 @@ namespace RequintoBaldeonMovil.Views
         }
         public void IsPresentedChange()
         {
-            if (App.Current.Properties.ContainsKey("PER_CODIGO"))
+           /* if (App.Current.Properties.ContainsKey("PER_CODIGO"))
             {
                 lblUser.Text = App.Current.Properties["USERNAME"].ToString();
                 btnLogout.IsVisible = true;
@@ -70,7 +70,7 @@ namespace RequintoBaldeonMovil.Views
                 lblUser.Text = "";
                 btnLogout.IsVisible = false;
                 btnLogin.IsVisible = true;
-            }
+            }*/
         }
     }
 }

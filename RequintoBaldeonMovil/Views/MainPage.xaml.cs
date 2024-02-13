@@ -32,7 +32,7 @@ namespace RequintoBaldeonMovil.Views
                         MenuPages.Add(id, new NavigationPage(new HomePage()));
                         break;
                     case (int)MenuItemType.Eventos:
-                        MenuPages.Add(id, new NavigationPage(new EventoPage()));
+                        MenuPages.Add(id, new NavigationPage(new EventosPage()));
                         break;
                     case (int)MenuItemType.Patrocinadores:
                         MenuPages.Add(id, new NavigationPage(new PatrocinadoresPage()));

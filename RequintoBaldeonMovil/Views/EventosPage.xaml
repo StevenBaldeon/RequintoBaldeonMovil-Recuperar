@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RequintoBaldeonMovil.Views.EventosPage">
+<ContentPage.Content>
+        
+        <StackLayout>
+            <!-- CAROUSEL POSTS -->
+            <CarouselView 
+                
+                ItemsSource="{Binding Eventos}" PeekAreaInsets="50">
+                  <CarouselView.ItemTemplate>
+                    <DataTemplate >
+                        <StackLayout>
+                            <Frame BorderColor="Gray"  HasShadow="True" HeightRequest="400" CornerRadius="20" VerticalOptions="CenterAndExpand">
+                                <Grid >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                
+                                <Image 
+                            Grid.Row="0"
+                            Aspect="AspectFit"
+                           HeightRequest="250" 
+                           WidthRequest="100"
+                           HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                            Source="{Binding Imagen}"/>
+                            <Label 
+                            Grid.Row="1" 
+                           FontSize="24" 
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           VerticalTextAlignment="Center"
+                           HorizontalTextAlignment="End"
+                            Text="{Binding Nombre}"
+                            />
+                                    <Label 
+                            Grid.Row="2" 
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           VerticalTextAlignment="Center"
+                           HorizontalTextAlignment="End"
+                            Text="{Binding Fecha,StringFormat='Fecha: {0:}'}"
+                            />
+                                <Label 
+                            Grid.Row="3"
+                            HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           VerticalTextAlignment="Center"
+                           HorizontalTextAlignment="End"
+                            Text="{Binding Precio,StringFormat='Precio {0} USD'}"
+                            />
+                                <Label />
+                                    <Button Grid.Row="4" 
+                                            TextColor="#daa61b"
+                                            BackgroundColor="#FFFFFF"
+                                            Text="Mas Información ... "
+                                            HeightRequest="40"
+                                            Clicked="MasInformacion"
+                                            HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                                            >
+                                    </Button>
+
+
+                                </Grid>
+                            </Frame>
+                        </StackLayout>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+                <CarouselView.ItemsLayout>
+                    <LinearItemsLayout 
+                        Orientation="Horizontal"
+                        SnapPointsType="Mandatory"
+                        SnapPointsAlignment="Start"
+                        ItemSpacing="12"
+                        />
+                </CarouselView.ItemsLayout>
+            </CarouselView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
