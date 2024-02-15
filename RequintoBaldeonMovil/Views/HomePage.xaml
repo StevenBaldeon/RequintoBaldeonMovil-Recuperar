@@ -19,7 +19,7 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
-                <Image Source="Background_Home.jpg" HorizontalOptions="CenterAndExpand" WidthRequest="400" />
+                <Image Source="Background_Home.jpg" HorizontalOptions="CenterAndExpand" WidthRequest="392" />
                 <BoxView Color="#daa61b" Opacity="0.4" />
             </Grid>
 
