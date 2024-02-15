@@ -31,13 +31,13 @@ namespace RequintoBaldeonMovil.Views
         }
         protected async void MasInformacion(object sender, EventArgs e)
         {
-            /*var button = (Button)sender;
+            var button = (Button)sender;
             var row = Grid.GetRow(button);
             var grid = button.Parent as Grid;
             //assuming the image is in column 1
-            Convert.ToDecimal(((Label)grid.Children.ElementAt(0)).Text))
-           */
-            Navigation.PushAsync(new EventoPage(1));
+            
+           
+            Navigation.PushAsync(new EventoPage(Convert.ToDecimal(((Label)grid.Children.ElementAt(0)).Text))));
         }
     }
 }
