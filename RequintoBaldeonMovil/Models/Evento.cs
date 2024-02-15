@@ -12,6 +12,7 @@ namespace RequintoBaldeonMovil.Models
         public string EVE_FECHA { get; set; }
         public string EVE_HORA { get; set; }
         public string EVE_UBICACION { get; set; }
+        public string EVE_DIRECCION { get; set; }
         public string EVE_PRECIO_ENTRADA { get; set; }
         public string EVE_IMAGEN { get; set; }
         public string EVE_OBSERVACION{ get; set; }

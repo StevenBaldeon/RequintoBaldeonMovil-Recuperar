@@ -14,6 +14,8 @@ namespace RequintoBaldeonMovil.Views
 	public partial class EventosPage : ContentPage
 	{
         ListaEventosViewModel vm;
+     
+
         public EventosPage ()
 		{
 			InitializeComponent ();
@@ -23,13 +25,19 @@ namespace RequintoBaldeonMovil.Views
 
         protected async override void OnAppearing()
         {
-            await vm.CargarDatos();
+          //  await vm.CargarDatos();
 
             base.OnAppearing();
         }
-        async void MasInformacion(object sender, EventArgs e)
+        protected async void MasInformacion(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new EventoPage());
+            /*var button = (Button)sender;
+            var row = Grid.GetRow(button);
+            var grid = button.Parent as Grid;
+            //assuming the image is in column 1
+            Convert.ToDecimal(((Label)grid.Children.ElementAt(0)).Text))
+           */
+            Navigation.PushAsync(new EventoPage(1));
         }
     }
 }

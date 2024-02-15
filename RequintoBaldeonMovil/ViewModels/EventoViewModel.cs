@@ -8,6 +8,8 @@ using RequintoBaldeonMovil.Models;
 using Acr.UserDialogs;
 using RequintoBaldeonMovil.Models;
 using System.Diagnostics.Tracing;
+using RequintoBaldeonMovil.Services;
+using System.Collections.ObjectModel;
 
 namespace RequintoBaldeonMovil.ViewModels
 {
@@ -17,7 +19,13 @@ namespace RequintoBaldeonMovil.ViewModels
 
         public string controlador = "/api/Eventos/E";
 
-        private string imagen;
+        private decimal id;
+
+        public decimal Id
+        {
+            get => evento.EVE_CODIGO;
+            set { evento.EVE_CODIGO = value; OnPropertyChanged(); }
+        }
 
         public string Imagen
         {
@@ -54,9 +62,49 @@ namespace RequintoBaldeonMovil.ViewModels
         }
 
 
+        private string descripcion;
+
+        public string Descripcion
+        {
+            get => evento.EVE_DESCRIPCION;
+            set { evento.EVE_DESCRIPCION = value; OnPropertyChanged(); }
+        }
+
+
+        private string hora;
+
+        public string Hora
+        {
+            get => evento.EVE_HORA;
+            set { evento.EVE_HORA = value; OnPropertyChanged(); }
+        }
+
+        private string ubicacion;
+
+        public string Ubicacion
+        {
+            get => "https://maps.google.com/?q="+evento.EVE_UBICACION;
+            set { evento.EVE_UBICACION = value; OnPropertyChanged(); }
+        }
+
+
+        private string direccion;
+        public string Direccion
+        {
+            get => evento.EVE_DIRECCION;
+            set { evento.EVE_DIRECCION = value; OnPropertyChanged(); }
+        }
+
+        private ObservableCollection<EventoViewModel> eventos;
+
+        public ObservableCollection<EventoViewModel> Eventos
+        {
+            get => eventos;
+            set { eventos = value; OnPropertyChanged(); }
+        }
 
         public ICommand ComandoActualizar { private set; get; }
-
+        public ICommand ComandoCargarDatos { private set; get; }
 
         public EventoViewModel(Evento p = null)
         {
@@ -69,11 +117,57 @@ namespace RequintoBaldeonMovil.ViewModels
             else
                 producto = new Producto();
             */
-           
+
         }
 
-       
-       
+        public EventoViewModel(decimal id)
+        {
+            try
+            {
+                ComandoCargarDatos = new Command(async () => await CargarDatos(id));
+
+                CargarDatos(id);
+            }catch (Exception ex) { 
+            throw ex;
+            }
+        }
+
+
+    
+
+        public async Task CargarDatos(decimal id)
+        {
+            //List<Producto> productos = Servicios.ServicioDatos.ObtenerProductos();
+            //List<Producto> productos = new List<Producto>();
+            try
+            {
+                List<Evento> evento = await ServiceWebApi.ObtenerEvento("api/Eventos", id.ToString());
+
+
+
+                //  EventoViewModel eventosVM = new EventoViewModel();
+                List<EventoViewModel> eventosVM = new List<EventoViewModel>();
+
+                foreach (Evento p in evento)
+                {
+                    eventosVM.Add(new EventoViewModel(p));
+                }
+
+                Eventos = new ObservableCollection<EventoViewModel>(eventosVM);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+
+        }
+
 
     }
+
+
+
+      
+
 }

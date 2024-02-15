@@ -8,6 +8,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using UIsrael.Models;
+using System.Linq.Expressions;
 
 namespace RequintoBaldeonMovil.Services
 {
@@ -67,18 +68,39 @@ namespace RequintoBaldeonMovil.Services
 
         public static async Task<T> ObtenerItem<T>(string controlador, string id) where T : new()
         {
-            var respuesta = await cliente.GetAsync($"{controlador}/{id}");
+            HttpResponseMessage respuesta = await cliente.GetAsync($"{controlador}/{id}");
 
             if (respuesta.IsSuccessStatusCode)
             {
-                var contenido = await respuesta.Content.ReadAsStringAsync();
-                var item = JsonConvert.DeserializeObject<T>(contenido);
+                string  json = await respuesta.Content.ReadAsStringAsync();
+                var item = JsonConvert.DeserializeObject<T>(json);
                 return item;
             }
 
             return new T();
         }
-        
+        public static async Task<List<Evento>> ObtenerEvento(string controlador, string id)
+        {
+            try
+            {
+                HttpResponseMessage respuesta = await cliente.GetAsync($"{controlador}/{id}");
+
+                if (respuesta.IsSuccessStatusCode)
+                {
+                    var contenido = await respuesta.Content.ReadAsStringAsync();
+                    var result = JsonConvert.DeserializeObject<List<Evento>>(contenido);
+                    return result;
+                }
+                else
+                {
+                    return new List<Evento>();
+                }
+            }catch(Exception ex)
+            {
+                throw ex;
+            }
+
+        }
         public static async Task<string> LoginSIGE(string controlador, string id,string pine) 
         {
             pine = Tools.R(pine);

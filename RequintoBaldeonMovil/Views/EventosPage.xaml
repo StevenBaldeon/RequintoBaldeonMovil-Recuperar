@@ -13,7 +13,7 @@
                     <DataTemplate >
                         <StackLayout>
                             <Frame BorderColor="Gray"  HasShadow="True" HeightRequest="400" CornerRadius="20" VerticalOptions="CenterAndExpand">
-                                <Grid >
+                                <Grid x:Name="gvEvents" >
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto" />
                                     <RowDefinition Height="Auto" />
@@ -21,15 +21,22 @@
                                     <RowDefinition Height="Auto" />
                                         <RowDefinition Height="Auto" />
                                     </Grid.RowDefinitions>
+                                    <Label 
+                            Grid.Row="0" 
+                            x:Name="txtId" 
+                            Text="{Binding Id}"
+                                        IsVisible="false"
+                            />
                                 
-                                <Image 
+                                    <Image 
                             Grid.Row="0"
                             Aspect="AspectFit"
                            HeightRequest="250" 
                            WidthRequest="100"
                            HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                             Source="{Binding Imagen}"/>
-                            <Label 
+                                   
+                                    <Label 
                             Grid.Row="1" 
                            FontSize="24" 
                            HorizontalOptions="Center"
@@ -38,6 +45,7 @@
                            HorizontalTextAlignment="End"
                             Text="{Binding Nombre}"
                             />
+                                 
                                     <Label 
                             Grid.Row="2" 
                            HorizontalOptions="Center"
@@ -46,7 +54,8 @@
                            HorizontalTextAlignment="End"
                             Text="{Binding Fecha,StringFormat='Fecha: {0:}'}"
                             />
-                                <Label 
+                                    
+                                    <Label 
                             Grid.Row="3"
                             HorizontalOptions="Center"
                            VerticalOptions="Center"
@@ -54,7 +63,7 @@
                            HorizontalTextAlignment="End"
                             Text="{Binding Precio,StringFormat='Precio {0} USD'}"
                             />
-                                <Label />
+
                                     <Button Grid.Row="4" 
                                             TextColor="#daa61b"
                                             BackgroundColor="#FFFFFF"
@@ -63,8 +72,8 @@
                                             Clicked="MasInformacion"
                                             HorizontalOptions="Center"
                            VerticalOptions="Center"
-                                            >
-                                    </Button>
+                                            />
+
 
 
                                 </Grid>

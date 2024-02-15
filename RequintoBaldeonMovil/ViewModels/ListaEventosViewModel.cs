@@ -54,6 +54,14 @@ namespace RequintoBaldeonMovil.ViewModels
             CargarDatos();
         }
 
+        public ListaEventosViewModel(decimal id)
+        {
+           
+            ComandoCargarDatos = new Command(async () => await CargarDatos());
+
+            CargarDatos(id.ToString());
+        }
+
         public async Task CargarDatos()
         {
             //List<Producto> productos = Servicios.ServicioDatos.ObtenerProductos();
@@ -62,6 +70,25 @@ namespace RequintoBaldeonMovil.ViewModels
             List<Evento> eventos = await ServiceWebApi.ObtenerItems<Evento>("api/Eventos/E");
 
             List <EventoViewModel> eventosVM = new List<EventoViewModel>();
+
+            foreach (Evento p in eventos)
+            {
+                eventosVM.Add(new EventoViewModel(p));
+            }
+
+            Eventos = new ObservableCollection<EventoViewModel>(eventosVM);
+
+            EstaActualizando = false;
+        }
+
+        public async Task CargarDatos(string id)
+        {
+            //List<Producto> productos = Servicios.ServicioDatos.ObtenerProductos();
+            //List<Producto> productos = new List<Producto>();
+
+            List<Evento> eventos = await ServiceWebApi.ObtenerItems<Evento>("api/Eventos/"+id);
+
+            List<EventoViewModel> eventosVM = new List<EventoViewModel>();
 
             foreach (Evento p in eventos)
             {
