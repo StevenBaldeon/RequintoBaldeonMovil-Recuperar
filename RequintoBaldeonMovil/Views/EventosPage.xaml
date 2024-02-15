@@ -3,6 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RequintoBaldeonMovil.Views.EventosPage"
              Title="Eventos">
+    
+    
     <NavigationPage.TitleView>
         <StackLayout Orientation="Horizontal" Spacing="10">
             <Label Text="Eventos"  FontAttributes="Bold" TextColor="White" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" />
@@ -14,7 +16,7 @@
         <Grid>
             <Image Source="Background_eventos.jpg"  Aspect="AspectFill" Opacity="0.8" />
             <StackLayout>
-                <Label Text="Nuestros Eventos" FontSize="24" HorizontalOptions="Center" Margin="0,0,0,20" FontAttributes="Bold,Italic" FontFamily="Serif" TextColor="Black"/>
+                <Label Text="Nuestros Eventos" FontSize="30" HorizontalOptions="Center" Margin="0,0,0,-50" Padding="0,50,0,0" FontAttributes="Bold,Italic" FontFamily="Serif" TextColor="Black"/>
                 <!-- CAROUSEL POSTS -->
                 <CarouselView 
                     ItemsSource="{Binding Eventos}" PeekAreaInsets="50">
@@ -30,6 +32,10 @@
                                             <RowDefinition Height="Auto" />
                                             <RowDefinition Height="Auto" />
                                         </Grid.RowDefinitions>
+                                        <Label 
+                                             Grid.Row="0" IsVisible="false"
+                                              Text="{Binding Id}"
+                                             />
                                         <Image 
                                             Grid.Row="0"
                                             Aspect="AspectFit"
@@ -68,7 +74,7 @@
                                         <Button Grid.Row="4" 
                                                 TextColor="White"
                                                 BackgroundColor="#daa61b"
-                                                Text="Mas Información ... "
+                                                Text="Más Información ... "
                                                 HeightRequest="40"
                                                 Clicked="MasInformacion"
                                                 HorizontalOptions="Center"

@@ -22,7 +22,7 @@ namespace RequintoBaldeonMovil.Views
             this.IsPresentedChange();
             menuItems = new List<HomeMenuItem>
             {
-                new HomeMenuItem {Id = MenuItemType.Inicio, Title="Inicio", icon="Facebook.png"},
+                new HomeMenuItem {Id = MenuItemType.Inicio, Title="Inicio", icon="icon_about.png"},
                  new HomeMenuItem {Id = MenuItemType.Eventos, Title="Eventos", icon="Eventos_Menu.png"},
                 new HomeMenuItem {Id = MenuItemType.Patrocinadores, Title="Patrocinadores", icon="Patrocinadores_Menu.png"},
                 new HomeMenuItem {Id = MenuItemType.RedesSociales, Title="Redes Sociales", icon="RedesSociales_Menu.png"},
@@ -35,10 +35,20 @@ namespace RequintoBaldeonMovil.Views
             {
                 if (e.SelectedItem == null)
                     return;
+
                 var id = (int)((HomeMenuItem)e.SelectedItem).Id;
+
                 if ((App.Current.Properties.ContainsKey("PER_CODIGO") && App.Current.Properties.ContainsKey("USERNAME")) || id == 0 || id == 1 || id == 2 || id == 3)
                 {
                     await RootPage.NavigateFromMenu(id);
+                    this.IsPresentedChange();
+                }
+                else
+                {
+
+                    ListViewMenu.SelectedItem = menuItems[0];
+                    await RootPage.NavigateFromMenu(0);
+                    //await PopupNavigation.Instance.PushAsync(new LoginPage(this));
                     this.IsPresentedChange();
 
                 }
@@ -59,7 +69,7 @@ namespace RequintoBaldeonMovil.Views
         }
         public void IsPresentedChange()
         {
-           /* if (App.Current.Properties.ContainsKey("PER_CODIGO"))
+            if (App.Current.Properties.ContainsKey("PER_CODIGO"))
             {
                 lblUser.Text = App.Current.Properties["USERNAME"].ToString();
                 btnLogout.IsVisible = true;
@@ -70,7 +80,7 @@ namespace RequintoBaldeonMovil.Views
                 lblUser.Text = "";
                 btnLogout.IsVisible = false;
                 btnLogin.IsVisible = true;
-            }*/
+            }
         }
     }
 }

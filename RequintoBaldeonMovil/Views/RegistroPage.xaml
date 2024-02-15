@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RequintoBaldeonMovil.Views.RegistroPage" NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Content>
+        <Grid>
+            <!-- Fondo de la página con opacidad -->
+            <Image Source="Background.jpg" Aspect="AspectFill" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Opacity="0.8" />
+
+            <!-- Contenedor central con el formulario de registro -->
+            <Frame VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="#d9d9d9" Padding="50" Margin="5" CornerRadius="50">
+                <Frame.Content>
+                    <StackLayout Padding="10">
+                        <Label Text="Nombre:" FontSize="Medium" />
+                        <Entry Placeholder="Ingrese su nombre" />
+
+                        <Label Text="Apellido:" FontSize="Medium" />
+                        <Entry Placeholder="Ingrese su apellido" />
+
+                        <Label Text="Cédula:" FontSize="Medium" />
+                        <Entry Placeholder="Ingrese su cédula" Keyboard="Numeric" />
+
+                        <Label Text="Email:" FontSize="Medium" />
+                        <Entry Placeholder="Ingrese su email" Keyboard="Email" />
+
+                        <Label Text="Clave:" FontSize="Medium" />
+                        <Entry Placeholder="Ingrese su clave" IsPassword="True" />
+
+                        <Label Text="Teléfono:" FontSize="Medium" />
+                        <Entry Placeholder="Ingrese su teléfono" Keyboard="Telephone" />
+
+                        <Button x:Name="BtnRegistro" Text="Registrarse" Clicked="BtnRegistro_Clicked" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Margin="0,20,0,0" />
+                    </StackLayout>
+                </Frame.Content>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
+
+</ContentPage>

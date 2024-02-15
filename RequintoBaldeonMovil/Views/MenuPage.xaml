@@ -10,7 +10,7 @@
         </StackLayout>
         <StackLayout  Orientation="Horizontal" Padding="20,0,20,0">
             <Label x:Name="lblUser"  HorizontalOptions="StartAndExpand" VerticalTextAlignment="Center"/>
-            <ImageButton x:Name="btnLogout"  Source="Resena_Menu.png" BackgroundColor="Transparent" WidthRequest="50" Clicked="btnLogout_Clicked" HorizontalOptions="End">
+            <ImageButton x:Name="btnLogout"  Source="Logout_Menu.png" BackgroundColor="Transparent" WidthRequest="50" Clicked="btnLogout_Clicked" HorizontalOptions="End">
                 <VisualStateManager.VisualStateGroups>
                     <VisualStateGroup x:Name="CommonStates">
                         <VisualState x:Name="Normal">
@@ -28,7 +28,7 @@
                     </VisualStateGroup>
                 </VisualStateManager.VisualStateGroups>
             </ImageButton>
-            <ImageButton x:Name="btnLogin"  Source="login.png" BackgroundColor="Transparent" WidthRequest="50" HorizontalOptions="EndAndExpand" Clicked="btnLogin_Clicked" >
+            <ImageButton x:Name="btnLogin"  Source="TikTok.png" BackgroundColor="Transparent" WidthRequest="50" HorizontalOptions="EndAndExpand" Clicked="btnLogin_Clicked" >
                 <VisualStateManager.VisualStateGroups>
                     <VisualStateGroup x:Name="CommonStates">
                         <VisualState x:Name="Normal">

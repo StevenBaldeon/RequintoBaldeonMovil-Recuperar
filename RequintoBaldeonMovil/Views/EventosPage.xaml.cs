@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using RequintoBaldeonMovil.ViewModels;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -37,7 +36,7 @@ namespace RequintoBaldeonMovil.Views
             //assuming the image is in column 1
             
            
-            Navigation.PushAsync(new EventoPage(Convert.ToDecimal(((Label)grid.Children.ElementAt(0)).Text))));
+            Navigation.PushAsync(new EventoPage(Convert.ToDecimal(((Label)grid.Children.ElementAt(0)).Text)));
         }
     }
 }

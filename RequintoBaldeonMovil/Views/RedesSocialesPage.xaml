@@ -39,7 +39,7 @@
 
             <!-- Facebook -->
             <StackLayout Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center" Spacing="5">
-                <Frame Padding="10" BackgroundColor="LightGray" HasShadow="True" CornerRadius="10">
+                <Frame Padding="10" BackgroundColor="Transparent" HasShadow="True" CornerRadius="10">
                     <Image Source="Facebook.png" HeightRequest="50" WidthRequest="50" VerticalOptions="Center">
                         <Image.GestureRecognizers>
                             <TapGestureRecognizer  x:Name="TpFacebook" Tapped="TpFacebook_Tapped"/>
@@ -51,7 +51,7 @@
 
             <!-- Instagram -->
             <StackLayout Grid.Row="0" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center" Spacing="5">
-                <Frame Padding="10" BackgroundColor="LightGray" HasShadow="True" CornerRadius="10">
+                    <Frame Padding="10" BackgroundColor="Transparent" HasShadow="True" CornerRadius="10">
                     <Image Source="Instagram.png" HeightRequest="50" WidthRequest="50" VerticalOptions="Center">
                         <Image.GestureRecognizers>
                             <TapGestureRecognizer x:Name="TpInstagram" Tapped="TpInstagram_Tapped" />
@@ -63,7 +63,7 @@
 
             <!-- TikTok -->
             <StackLayout Grid.Row="1" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center" Spacing="5">
-                <Frame Padding="10" BackgroundColor="LightGray" HasShadow="True" CornerRadius="10">
+                    <Frame Padding="10" BackgroundColor="Transparent" HasShadow="True" CornerRadius="10">
                     <Image Source="TikTok.png" HeightRequest="50" WidthRequest="50" VerticalOptions="Center">
                         <Image.GestureRecognizers>
                             <TapGestureRecognizer x:Name="TpTiktok" Tapped="TpTiktok_Tapped" />
@@ -75,7 +75,7 @@
 
             <!-- YouTube -->
             <StackLayout Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center" Spacing="5">
-                <Frame Padding="10" BackgroundColor="LightGray" HasShadow="True" CornerRadius="10">
+                    <Frame Padding="10" BackgroundColor="Transparent" HasShadow="True" CornerRadius="10">
                     <Image Source="Youtube.png" HeightRequest="50" WidthRequest="50" VerticalOptions="Center">
                         <Image.GestureRecognizers>
                             <TapGestureRecognizer x:Name="TpYoutube" Tapped="TpYoutube_Tapped" />
@@ -87,7 +87,7 @@
 
             <!-- WhatsApp -->
             <StackLayout Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="Center" VerticalOptions="Center" Spacing="5">
-                <Frame Padding="10" BackgroundColor="LightGray" HasShadow="True" CornerRadius="10">
+                    <Frame Padding="10" BackgroundColor="Transparent" HasShadow="True" CornerRadius="10">
                     <Image Source="Whatsapp.png" HeightRequest="50" WidthRequest="50" VerticalOptions="Center">
                         <Image.GestureRecognizers>
                             <TapGestureRecognizer x:Name="TpWhatsapp" Tapped="TpWhatsapp_Tapped" />

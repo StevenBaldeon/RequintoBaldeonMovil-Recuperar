@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="RequintoBaldeonMovil.Views.LoginPage">
+             x:Class="RequintoBaldeonMovil.Views.LoginPage" NavigationPage.HasNavigationBar="False">
 
     <ContentPage.Content>
         <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
@@ -9,7 +9,7 @@
             <Image Source="Background.jpg" Aspect="AspectFill" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
 
             <!-- Contenedor de inicio de sesión con márgenes y bordes redondeados -->
-            <Frame VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Opacity="0.8" BackgroundColor="#d9d9d9" Padding="50" Margin="10" CornerRadius="50">
+            <Frame VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"  BackgroundColor="#d9d9d9" Padding="50" Margin="10" CornerRadius="50">
                 <StackLayout Spacing="5">
                     <!-- Contenido actual del StackLayout -->
 
@@ -34,6 +34,9 @@
 
                         <!-- Botón de envío del formulario -->
                         <Button x:Name="BtnIniciarSesion" Text="Iniciar Sesión" Clicked="BtnIniciarSesion_Clicked" BackgroundColor="#e9a512" TextColor="White"/>
+
+                        <!-- Botón de registro -->
+                        <Button x:Name="btnRegistrarse" Text="Registrarse" FontAttributes="Bold" BackgroundColor="Transparent"  CornerRadius="30" TextColor="White" Clicked="btnRegistrarse_Clicked" />
                     </StackLayout>
 
                     <Label Text="© 2024 El Requinto Baldeón."  TextColor="Black" HorizontalOptions="Center" Opacity="0.4"/>
@@ -42,3 +45,4 @@
         </Grid>
     </ContentPage.Content>
 </ContentPage>
+
