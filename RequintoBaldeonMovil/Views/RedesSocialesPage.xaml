@@ -5,16 +5,23 @@
 
     <NavigationPage.TitleView>
         <StackLayout Orientation="Horizontal" Spacing="10">
-            <Label Text="{Binding Title}" FontAttributes="Bold" TextColor="White" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"/>
+            <Label Text="Redes Sociales" FontAttributes="Bold" TextColor="White" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"/>
             <Image Source="Logo_Blanco.png" HeightRequest="50" WidthRequest="100" HorizontalOptions="EndAndExpand" Margin="0,0,10,0"/>
         </StackLayout>
     </NavigationPage.TitleView>
 
-    <StackLayout Padding="20">
+    <Grid>
+        <!-- Fondo de pantalla -->
+        <Image Source="Background_resena.jpg" Aspect="AspectFill" />
+        <BoxView Color="White" Opacity="0.8" />
+
+        <StackLayout Padding="20">
 
         <!-- Título -->
         <Label Text="Mis Redes Sociales"
+               FontFamily="Serif"
                FontSize="24"
+               FontAttributes="Bold,Italic"
                HorizontalOptions="Center"
                Margin="0,0,0,20"/>
 
@@ -39,7 +46,7 @@
                         </Image.GestureRecognizers>
                     </Image>
                 </Frame>
-                <Label Text="Facebook" HorizontalOptions="Center"/>
+                <Label Text="Facebook" HorizontalOptions="Center" FontAttributes="Bold"/>
             </StackLayout>
 
             <!-- Instagram -->
@@ -51,7 +58,7 @@
                         </Image.GestureRecognizers>
                     </Image>
                 </Frame>
-                <Label Text="Instagram" HorizontalOptions="Center"/>
+                    <Label Text="Instagram" HorizontalOptions="Center" FontAttributes="Bold"/>
             </StackLayout>
 
             <!-- TikTok -->
@@ -63,7 +70,7 @@
                         </Image.GestureRecognizers>
                     </Image>
                 </Frame>
-                <Label Text="TikTok" HorizontalOptions="Center"/>
+                    <Label Text="TikTok" HorizontalOptions="Center" FontAttributes="Bold"/>
             </StackLayout>
 
             <!-- YouTube -->
@@ -75,7 +82,7 @@
                         </Image.GestureRecognizers>
                     </Image>
                 </Frame>
-                <Label Text="YouTube" HorizontalOptions="Center"/>
+                    <Label Text="YouTube" HorizontalOptions="Center" FontAttributes="Bold"/>
             </StackLayout>
 
             <!-- WhatsApp -->
@@ -87,10 +94,11 @@
                         </Image.GestureRecognizers>
                     </Image>
                 </Frame>
-                <Label Text="WhatsApp" HorizontalOptions="Center"/>
+                    <Label Text="WhatsApp" HorizontalOptions="Center" FontAttributes="Bold"/>
             </StackLayout>
         </Grid>
 
-    </StackLayout>
+        </StackLayout>
+    </Grid>
 
 </ContentPage>

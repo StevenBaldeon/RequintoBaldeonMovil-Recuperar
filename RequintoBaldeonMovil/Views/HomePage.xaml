@@ -4,7 +4,7 @@
              x:Class="RequintoBaldeonMovil.Views.HomePage"
              Title="Inicio">
             
-    <!--BackgroundImageSource="background.jpg"-->
+
     <NavigationPage.TitleView>
         <StackLayout Orientation="Horizontal" Spacing="10">
             <Label Text="Inicio"  FontAttributes="Bold" TextColor="White" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" />
@@ -18,27 +18,31 @@
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
-
                 </Grid.RowDefinitions>
-                <Image Source="Background_Home.jpg" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"  WidthRequest="1000" />
+                <Image Source="Background_Home.jpg" HorizontalOptions="CenterAndExpand" WidthRequest="400" />
                 <BoxView Color="#daa61b" Opacity="0.4" />
-
             </Grid>
 
 
-            <Grid ColumnSpacing="5" >
+            <Grid  >
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
                     <RowDefinition Height="*" />
-
                 </Grid.RowDefinitions>
+                
                 <Grid.ColumnDefinitions>
-
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
-                <ImageButton x:Name="imgeventos" Opacity="0.9" BackgroundColor="White" Source="Eventos_Inicio.png"  Grid.Row="0" Grid.Column="0" BorderColor="#daa61b" BorderWidth="1" CornerRadius="5" Clicked="imgeventos_Clicked" >
+                <ImageButton x:Name="imgeventos" 
+                             Opacity="0.9" 
+                             BackgroundColor="White" 
+                             Source="Eventos_Inicio.png"
+                             Grid.Row="0" Grid.Column="0" 
+                             BorderColor="#daa61b" BorderWidth="1" 
+                             CornerRadius="5" 
+                             Clicked="imgeventos_Clicked">
                     <VisualStateManager.VisualStateGroups>
                         <VisualStateGroup x:Name="CommonStates">
                             <VisualState x:Name="Normal">
@@ -119,9 +123,7 @@
                         </VisualStateGroup>
                     </VisualStateManager.VisualStateGroups>
                 </ImageButton>
-                <Image Source="slogan.png" Grid.Row="4" Grid.Column="0" Grid.RowSpan="2">
-
-                </Image>
+               
 
 
 
