@@ -23,17 +23,17 @@
                     <StackLayout>
                         <!-- Etiqueta y campo de entrada para el usuario -->
                         <Frame BackgroundColor="White" CornerRadius="10" Margin="10" Padding="1">
-                            <Entry x:Name="usernameEntry" Placeholder="Usuario" TextColor="White" />
+                            <Entry x:Name="usernameEntry" Placeholder="Usuario" TextColor="#e9a512"  Text="{Binding User}"/>
                         </Frame>
 
 
                         <!-- Etiqueta y campo de entrada para la contraseña -->
                         <Frame BackgroundColor="White" CornerRadius="10" Margin="10" Padding="1">
-                            <Entry x:Name="passwordEntry" Placeholder="Contraseña" TextColor="White" />
+                            <Entry x:Name="passwordEntry" Placeholder="Contraseña" TextColor="#e9a512" IsPassword="true" Text="{Binding Password}"/>
                         </Frame>
 
                         <!-- Botón de envío del formulario -->
-                        <Button x:Name="BtnIniciarSesion" Text="Iniciar Sesión" Clicked="BtnIniciarSesion_Clicked" BackgroundColor="#e9a512" TextColor="White"/>
+                        <Button x:Name="BtnIniciarSesion" Text="Iniciar Sesión" Command="{Binding LoginCommand}" BackgroundColor="#e9a512" TextColor="White"/>
 
                         <!-- Botón de registro -->
                         <Button x:Name="btnRegistrarse" Text="Registrarse" FontAttributes="Bold" BackgroundColor="Transparent"  CornerRadius="30" TextColor="White" Clicked="btnRegistrarse_Clicked" />

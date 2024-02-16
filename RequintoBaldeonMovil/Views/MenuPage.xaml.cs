@@ -38,7 +38,7 @@ namespace RequintoBaldeonMovil.Views
 
                 var id = (int)((HomeMenuItem)e.SelectedItem).Id;
 
-                if ((App.Current.Properties.ContainsKey("PER_CODIGO") && App.Current.Properties.ContainsKey("USERNAME")) || id == 0 || id == 1 || id == 2 || id == 3)
+                if ((App.Current.Properties.ContainsKey("USU_CODIGO") && App.Current.Properties.ContainsKey("USERNAME")) || id == 0 || id == 1 || id == 2 || id == 3 || id == 4)
                 {
                     await RootPage.NavigateFromMenu(id);
                     this.IsPresentedChange();
@@ -65,11 +65,25 @@ namespace RequintoBaldeonMovil.Views
 
         private void btnLogin_Clicked(object sender, EventArgs e)
         {
+           /* try
+            {
+                ListViewMenu.SelectedItem = menuItems[0];
+                 RootPage.NavigateFromMenu(0);
+                await PopupNavigation.Instance.PushAsync(new LoginPage(this));
+                this.IsPresentedChanged();
 
+            }
+            catch (Exception ex)
+            {
+                //  Debug.WriteLine(ex);
+                DependencyService.Get<ISnackBar>().ShowSnackbar(ex.Message, "#228b22");
+
+
+            }*/
         }
         public void IsPresentedChange()
         {
-            if (App.Current.Properties.ContainsKey("PER_CODIGO"))
+            if (App.Current.Properties.ContainsKey("USU_CODIGO"))
             {
                 lblUser.Text = App.Current.Properties["USERNAME"].ToString();
                 btnLogout.IsVisible = true;

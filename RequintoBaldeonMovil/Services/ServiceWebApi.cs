@@ -101,19 +101,27 @@ namespace RequintoBaldeonMovil.Services
             }
 
         }
-        public static async Task<string> LoginSIGE(string controlador, string id,string pine) 
+        public static async Task<string> Login(string controlador, string id,string pine) 
         {
-            pine = Tools.R(pine);
-            HttpResponseMessage respuesta = await cliente.GetAsync($"{controlador}/{id}/{pine}");
-            
-            if (respuesta.IsSuccessStatusCode)
+            try
             {
-                var contenido = await respuesta.Content.ReadAsStringAsync();
-                Result result = JsonConvert.DeserializeObject<Result>(contenido);
-                return result.msg;
+                pine = Tools.R(pine);
+                HttpResponseMessage respuesta = await cliente.GetAsync($"{controlador}/{id}/{pine}");
+
+                if (respuesta.IsSuccessStatusCode)
+                {
+                    var contenido = await respuesta.Content.ReadAsStringAsync();
+                    Result result = JsonConvert.DeserializeObject<Result>(contenido);
+                    return result.msg;
+                }
+
+                return "Servidor no disponible. Intente más tarde";
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
 
-            return "Servidor no disponible. Intente más tarde";
         }
 
 

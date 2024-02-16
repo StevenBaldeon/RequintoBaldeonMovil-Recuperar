@@ -8,7 +8,7 @@ namespace RequintoBaldeonMovil
 {
     public partial class App : Application
     {
-        public static string WsUIurl = "http://192.168.100.36:5000/";
+        public static string WsUIurl = "http://192.168.1.20:5000/";
 
         public App()
         {
@@ -16,6 +16,7 @@ namespace RequintoBaldeonMovil
             ServiceWebApi.incializa(WsUIurl);
 
             DependencyService.Register<MockDataStore>();
+            MainPage = new MainPage();
             MainPage = new NavigationPage(new LoginPage());
         }
 
