@@ -7,10 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\Fonts\Amarillo.otf" />
     <None Remove="Resources\Fonts\Serif.otf" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Resources\Fonts\Amarillo.otf" />
     <EmbeddedResource Include="Resources\Fonts\Serif.otf" />
   </ItemGroup>
 

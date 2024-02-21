@@ -5,27 +5,54 @@
     <!--<ContentPage.BindingContext>
         <viewModels:ResenaViewModel />
     </ContentPage.BindingContext>-->
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" Spacing="10">
+            <Label Text="Reseña"  FontAttributes="Bold" TextColor="White" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" />
+            <Image Source="Logo_Blanco.png" HeightRequest="50"  WidthRequest="100" HorizontalOptions="EndAndExpand" Margin="0,0,5,0"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
 
     <ContentPage.Content>
-        <Grid>
+        <ScrollView>
+            <Grid>
 
-            <!-- Fondo de pantalla -->
-            <Image Source="Background_resena.jpg" Aspect="AspectFill" />
-            <BoxView Color="White" Opacity="0.4" />
+                <!-- Fondo de pantalla -->
+                <Image Source="Background_resena.jpg" Aspect="AspectFill" />
+                <BoxView Color="White" Opacity="0.4" />
 
-            <!-- Usar un StackLayout para organizar los elementos -->
-            <StackLayout Padding="20">
+                <!-- Usar un StackLayout para organizar los elementos -->
+                <StackLayout Padding="20">
 
-                <!-- Agregar un Frame para el fondo con el texto vinculado -->
-                <Frame BackgroundColor="LightGray" CornerRadius="10" Margin="0,0,0,20">
-                    <Label Text="{Binding Texto}" HorizontalOptions="Center" VerticalOptions="Center" />
-                </Frame>
+                    <!-- Agregar un Frame para el fondo con el texto vinculado -->
+                    <Frame BackgroundColor="LightGray" CornerRadius="10" Margin="0,0,0,20">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
 
-                <!-- Otros elementos de la página aquí -->
+                            <Label Text="El Requinto Baldeón" HorizontalOptions="Center"  FontSize="Large" FontAttributes="Bold" Margin="0,10,0,20" Grid.Row="0" FontFamily="Amarillo" />
+                            <Label Text="Desde la hermosa ciudad de Ibarra, nació un proyecto artístico que ha encendido los corazones de quienes tienen el privilegio de escucharlo: 'El Requinto Baldeón', un proyecto musical que promete cautivar los corazones y los sentidos. Su aprecio por la música floreció desde temprana edad, comenzando a los 4 años en un mariachi de la localidad, donde no solo aprendió a cantar, sino también a interpretar diversos instrumentos y permaneció durante más de una década." 
+                                   Margin="0,0,0,20" Grid.Row="1" HorizontalTextAlignment="Center" />
+                            <Label Text="Sin embargo, el año 2017 marcó un punto de inflexión en su carrera cuando decidió aventurarse en la exploración del requinto. Este instrumento emblemático de la música tradicional mexicana y ecuatoriana, que le abrió las puertas a un mundo más amplio de la expresión musical apasionante." 
+                                   Margin="0,0,0,20" Grid.Row="2" HorizontalTextAlignment="Center" />
+                            <Label Text="Su viaje musical lo llevó a travesar fronteras, permitiéndole tocar por Colombia y explorar la música popular en el año 2017. Pero en el 2019, Steven Baldeón regresó a Ecuador y dio vida a su propio proyecto musical como solista, 'El Requinto Baldeón', que en la actualidad se destaca por su interpretación y sentimiento por la música nacional ecuatoriana, a través de su requinto y su voz." 
+                                   Margin="0,0,0,20" Grid.Row="3" HorizontalTextAlignment="Center" />
+                            <Label Text="Hoy con 21 años de edad, su trabajo incluye notables grabaciones como 'Engañada', 'Noches de Bocagrande', 'Obsesión', entre otras, que reflejan su pasión por la música y su compromiso con su cultura. Además, “El Requinto Baldeón” ha colaborado con destacados artistas como Sergio Sacoto, David Cañizares y varios grupos como por ejemplo “El Primer Trío del Ecuador – de Jorge Aguirre”, fortaleciendo aún más su presencia en la escena musical." 
+                                   Margin="0,0,0,20" Grid.Row="4" HorizontalTextAlignment="Center" />
+                            <Label Text="'El Requinto Baldeón' no es simplemente un nombre artístico, es una marca que representa un proyecto con la fusión de tradiciones melódicas, la destreza en el requinto y la pasión por la música. Con un sólido marco musical para sus presentaciones, este proyecto ofrece interpretaciones apasionadas que resuenan en los corazones de quienes tienen el placer de escucharle. El Requinto Baldeón promete seguir enriqueciendo la escena musical ecuatoriana y latinoamericana, con su inquebrantable compromiso con la excelencia musical." 
+                                   Margin="0,0,0,20" Grid.Row="5" HorizontalTextAlignment="Center" />
+                        </Grid>
+                    </Frame>
 
-            </StackLayout>
-        </Grid>
+                    <!-- Otros elementos de la página aquí -->
+
+                </StackLayout>
+            </Grid>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
-
-
