@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="RequintoBaldeonMovil.Views.RegistroPage" NavigationPage.HasNavigationBar="False">
+             x:Class="RequintoBaldeonMovil.Views.RegistroPage" NavigationPage.HasNavigationBar="False"
+             xmlns:toolkit="http://xamarin.com/schemas/2020/toolkit">
 
     <ContentPage.Content>
         <Grid>
@@ -14,21 +15,31 @@
                     <StackLayout Padding="10">
                         <Label Text="Nombre:" FontSize="Medium" />
                         <Entry Text="{Binding Nombres, Mode=TwoWay}" Placeholder="Ingrese su nombre" IsEnabled="{Binding IsEnabledTxt}"  />
+                        <Label x:Name="lblNomReq" TextColor="Red" IsVisible="False" Text="Nombre es Obligatorio"/>
 
                         <Label Text="Apellido:" FontSize="Medium" />
                         <Entry Text="{Binding Apellidos, Mode=TwoWay}" Placeholder="Ingrese su apellido" IsEnabled="{Binding IsEnabledTxt}" />
+                        <Label x:Name="lblApeReq" TextColor="Red" IsVisible="False" Text="Apellido es Obligatorio"/>
 
                         <Label Text="Cédula:" FontSize="Medium" />
                         <Entry Text="{Binding Cedula, Mode=TwoWay}" Placeholder="Ingrese su cédula" Keyboard="Numeric" IsEnabled="{Binding IsEnabledTxt}" >
-                         
+                            <Entry.Behaviors>
+                                <toolkit:EventToCommandBehavior
+                                    EventName="Unfocused"
+                                    Command="{Binding EntryUnfocused}" />
+                            </Entry.Behaviors>
+
                         </Entry>
+                        <Label x:Name="lblCedReq" TextColor="Red" IsVisible="False" Text="Cédula es Obligatorio"/>
 
                         <Label Text="Email:" FontSize="Medium" />
                         <Entry Text="{Binding Email, Mode=TwoWay}" Placeholder="Ingrese su email" Keyboard="Email" IsEnabled="{Binding IsEnabledTxt}" />
+                        <Label x:Name="lblEmaReq" TextColor="Red" IsVisible="False" Text="Email es Obligatorio"/>
 
                         <Label Text="Clave:" FontSize="Medium" />
                         <Entry Text="{Binding Clave, Mode=TwoWay}" Placeholder="Ingrese su clave" IsPassword="True" IsEnabled="{Binding IsEnabledTxt}" />
-                       
+                        <Label x:Name="lblUsuReq" TextColor="Red" IsVisible="False" Text="Clave es Obligatorio"/>
+
                         <Label Text="Repita Clave:" FontSize="Medium" />
                         <Entry Placeholder="Repita su clave" IsPassword="True"  IsEnabled="{Binding IsEnabledTxt}"/>
 
