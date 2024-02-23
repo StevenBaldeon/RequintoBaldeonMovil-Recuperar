@@ -79,6 +79,24 @@ namespace RequintoBaldeonMovil.Services
 
             return new T();
         }
+
+        public static async Task<bool> AgregarItem<T>(string controlador, T item) where T : new()
+        {
+            try
+            {
+                string body = JsonConvert.SerializeObject(item);
+                var contenido = new StringContent(body, Encoding.UTF8, "application/json");
+
+                HttpResponseMessage respuesta = await cliente.PostAsync(controlador, contenido);
+
+                return (respuesta.IsSuccessStatusCode);
+            }catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+
         public static async Task<List<Evento>> ObtenerEvento(string controlador, string id)
         {
             try

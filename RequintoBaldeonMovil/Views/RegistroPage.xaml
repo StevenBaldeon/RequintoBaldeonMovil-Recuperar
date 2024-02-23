@@ -13,24 +13,29 @@
                 <Frame.Content>
                     <StackLayout Padding="10">
                         <Label Text="Nombre:" FontSize="Medium" />
-                        <Entry Placeholder="Ingrese su nombre" />
+                        <Entry Text="{Binding Nombres, Mode=TwoWay}" Placeholder="Ingrese su nombre" IsEnabled="{Binding IsEnabledTxt}"  />
 
                         <Label Text="Apellido:" FontSize="Medium" />
-                        <Entry Placeholder="Ingrese su apellido" />
+                        <Entry Text="{Binding Apellidos, Mode=TwoWay}" Placeholder="Ingrese su apellido" IsEnabled="{Binding IsEnabledTxt}" />
 
                         <Label Text="Cédula:" FontSize="Medium" />
-                        <Entry Placeholder="Ingrese su cédula" Keyboard="Numeric" />
+                        <Entry Text="{Binding Cedula, Mode=TwoWay}" Placeholder="Ingrese su cédula" Keyboard="Numeric" IsEnabled="{Binding IsEnabledTxt}" >
+                         
+                        </Entry>
 
                         <Label Text="Email:" FontSize="Medium" />
-                        <Entry Placeholder="Ingrese su email" Keyboard="Email" />
+                        <Entry Text="{Binding Email, Mode=TwoWay}" Placeholder="Ingrese su email" Keyboard="Email" IsEnabled="{Binding IsEnabledTxt}" />
 
                         <Label Text="Clave:" FontSize="Medium" />
-                        <Entry Placeholder="Ingrese su clave" IsPassword="True" />
+                        <Entry Text="{Binding Clave, Mode=TwoWay}" Placeholder="Ingrese su clave" IsPassword="True" IsEnabled="{Binding IsEnabledTxt}" />
+                       
+                        <Label Text="Repita Clave:" FontSize="Medium" />
+                        <Entry Placeholder="Repita su clave" IsPassword="True"  IsEnabled="{Binding IsEnabledTxt}"/>
 
                         <Label Text="Teléfono:" FontSize="Medium" />
-                        <Entry Placeholder="Ingrese su teléfono" Keyboard="Telephone" />
+                        <Entry Text="{Binding Telefono, Mode=TwoWay}" Placeholder="Ingrese su teléfono" Keyboard="Telephone"  IsEnabled="{Binding IsEnabledTxt}"/>
 
-                        <Button x:Name="BtnRegistro" Text="Registrarse" Clicked="BtnRegistro_Clicked" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Margin="0,20,0,0" />
+                        <Button x:Name="BtnRegistro" Text="Registrarse" Command="{Binding ComandoRegistrar}"  HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Margin="0,20,0,0" />
                     </StackLayout>
                 </Frame.Content>
             </Frame>

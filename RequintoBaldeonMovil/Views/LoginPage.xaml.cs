@@ -23,9 +23,15 @@ namespace RequintoBaldeonMovil.Views
 
         }
 
-        private  void btnRegistrarse_Clicked(object sender, EventArgs e)
+        private  async void btnRegistrarse_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new RegistroPage());
+            try
+            {
+                Navigation.PushAsync(new RegistroPage());
+            } catch (Exception ex) {
+                throw new Exception(ex.Message);
+
+            }
         }
     }
 }

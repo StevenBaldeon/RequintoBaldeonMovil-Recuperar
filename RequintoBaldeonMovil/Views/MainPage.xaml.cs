@@ -47,6 +47,7 @@ namespace RequintoBaldeonMovil.Views
                         //    MenuPages.Add(id, new NavigationPage(new AboutPage()));
                         //    break;
                 }
+            }
                 var newPage = MenuPages[id];
 
                 if (newPage != null && Detail != newPage)
@@ -69,5 +70,5 @@ namespace RequintoBaldeonMovil.Views
                 }
             }
         }
-    }
+    
 }

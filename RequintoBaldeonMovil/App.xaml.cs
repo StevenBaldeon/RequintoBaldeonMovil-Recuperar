@@ -8,7 +8,7 @@ namespace RequintoBaldeonMovil
 {
     public partial class App : Application
     {
-        public static string WsUIurl = "http://192.168.1.20:5000/";
+        public static string WsUIurl = "http://192.168.1.8:5000/";
 
         public App()
         {
@@ -16,8 +16,18 @@ namespace RequintoBaldeonMovil
             ServiceWebApi.incializa(WsUIurl);
 
             DependencyService.Register<MockDataStore>();
-            MainPage = new MainPage();
-            MainPage = new NavigationPage(new LoginPage());
+            if ((App.Current.Properties.ContainsKey("USU_CODIGO") && App.Current.Properties.ContainsKey("USERNAME")))
+            {
+                MainPage = new NavigationPage(new MainPage()); 
+            }
+            else
+            {
+
+                MainPage = new NavigationPage(new LoginPage());
+
+            }
+            
+            
         }
 
         protected override void OnStart()

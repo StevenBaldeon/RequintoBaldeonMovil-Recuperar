@@ -80,7 +80,7 @@ namespace RequintoBaldeonMovil.ViewModels
             try
             {
                 
-                string respuesta = await ServiceWebApi.Login("api/Logins", User, Utils.Tools.ComputeSha256Hash(Password));
+                string respuesta = await ServiceWebApi.Login("api/Logins", User,Utils.Tools.ComputeSha256Hash(Password));
                 if (int.TryParse(respuesta, out this.usrUSU_CODIGO))
                 {
                     App.Current.Properties["USU_CODIGO"] = usrUSU_CODIGO;
@@ -98,6 +98,7 @@ namespace RequintoBaldeonMovil.ViewModels
                     //Navigation.InsertPageBefore(null, new MainPage());
                     //await Navigation.PopAsync(false);
                      App.Current.MainPage = new MainPage();
+                   // Application.Current.MainPage = new NavigationPage(new MainPage());
                     //   DependencyService.Get<ISnackBar>().ShowSnackbar("CORRECTO", "#01ff01");
                     //  DependencyService.Get<ISnackBar>().ShowToast("CORRECTO");
                     //IsLogged = true;

@@ -16,7 +16,7 @@ namespace RequintoBaldeonMovil.Droid
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            
+            Acr.UserDialogs.UserDialogs.Init(this);
             Forms.SetFlags("CollectionView_Experimental");
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             
