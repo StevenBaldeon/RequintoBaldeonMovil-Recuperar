@@ -28,7 +28,7 @@
                     </VisualStateGroup>
                 </VisualStateManager.VisualStateGroups>
             </ImageButton>
-            <ImageButton x:Name="btnLogin"  Source="TikTok.png" BackgroundColor="Transparent" WidthRequest="50" HorizontalOptions="EndAndExpand" Clicked="btnLogin_Clicked" >
+            <ImageButton x:Name="btnLogin"  Source="Logout_Menu.png" BackgroundColor="Transparent" WidthRequest="50" HorizontalOptions="EndAndExpand" Clicked="btnLogin_Clicked" >
                 <VisualStateManager.VisualStateGroups>
                     <VisualStateGroup x:Name="CommonStates">
                         <VisualState x:Name="Normal">
