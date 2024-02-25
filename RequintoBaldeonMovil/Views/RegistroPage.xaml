@@ -12,39 +12,83 @@
             <!-- Contenedor central con el formulario de registro -->
             <Frame VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="#d9d9d9" Padding="50" Margin="5" CornerRadius="50">
                 <Frame.Content>
-                    <StackLayout Padding="10">
+                    <StackLayout x:Name="Layout" Padding="10">
                         <Label Text="Nombre:" FontSize="Medium" />
-                        <Entry Text="{Binding Nombres, Mode=TwoWay}" Placeholder="Ingrese su nombre" IsEnabled="{Binding IsEnabledTxt}"  />
-                        <Label x:Name="lblNomReq" TextColor="Red" IsVisible="False" Text="Nombre es Obligatorio"/>
-
-                        <Label Text="Apellido:" FontSize="Medium" />
-                        <Entry Text="{Binding Apellidos, Mode=TwoWay}" Placeholder="Ingrese su apellido" IsEnabled="{Binding IsEnabledTxt}" />
-                        <Label x:Name="lblApeReq" TextColor="Red" IsVisible="False" Text="Apellido es Obligatorio"/>
-
-                        <Label Text="Cédula:" FontSize="Medium" />
-                        <Entry Text="{Binding Cedula, Mode=TwoWay}" Placeholder="Ingrese su cédula" Keyboard="Numeric" IsEnabled="{Binding IsEnabledTxt}" >
+                        <Entry Text="{Binding Nombres, Mode=TwoWay}" Placeholder="Ingrese su nombre" IsEnabled="{Binding IsEnabledTxt}"  >
                             <Entry.Behaviors>
                                 <toolkit:EventToCommandBehavior
                                     EventName="Unfocused"
-                                    Command="{Binding EntryUnfocused}" />
+                                    Command="{Binding EntryUnfocused}" CommandParameter="nombres"/>
                             </Entry.Behaviors>
 
                         </Entry>
-                        <Label x:Name="lblCedReq" TextColor="Red" IsVisible="False" Text="Cédula es Obligatorio"/>
+                        <Label x:Name="lblNomReq" TextColor="Red" IsVisible="{Binding IsValidNombres}" Text="Nombre es Obligatorio"/>
+
+                        <Label Text="Apellido:" FontSize="Medium" />
+                        <Entry Text="{Binding Apellidos, Mode=TwoWay}" Placeholder="Ingrese su apellido" IsEnabled="{Binding IsEnabledTxt}" >
+                            <Entry.Behaviors>
+                                <toolkit:EventToCommandBehavior
+                                    EventName="Unfocused"
+                                    Command="{Binding EntryUnfocused}" CommandParameter="apellidos"/>
+                            </Entry.Behaviors>
+
+                        </Entry>
+                        <Label x:Name="lblApeReq" TextColor="Red" IsVisible="{Binding IsValidApellidos}" Text="Apellido es Obligatorio"/>
+
+                        <Label Text="Cédula:" FontSize="Medium" />
+                        <Entry x:Name="txtCedula"  Text="{Binding Cedula, Mode=TwoWay}" Placeholder="Ingrese su cédula" Keyboard="Numeric" IsEnabled="{Binding IsEnabledTxt}" >
+                            <Entry.Behaviors>
+                                <toolkit:EventToCommandBehavior
+                                    EventName="Unfocused"
+                                    Command="{Binding EntryUnfocused}" CommandParameter="cedula"/>
+                            </Entry.Behaviors>
+
+                        </Entry>
+                        <Label x:Name="lblCedReq" TextColor="Red" IsVisible="{Binding IsValidCedula}" Text="{Binding ValidCedulaMsg, Mode=TwoWay}"/>
 
                         <Label Text="Email:" FontSize="Medium" />
-                        <Entry Text="{Binding Email, Mode=TwoWay}" Placeholder="Ingrese su email" Keyboard="Email" IsEnabled="{Binding IsEnabledTxt}" />
-                        <Label x:Name="lblEmaReq" TextColor="Red" IsVisible="False" Text="Email es Obligatorio"/>
+                        <Entry Text="{Binding Email, Mode=TwoWay}" Placeholder="Ingrese su email" Keyboard="Email" IsEnabled="{Binding IsEnabledTxt}" >
+                            <Entry.Behaviors>
+                                <toolkit:EventToCommandBehavior
+                                    EventName="Unfocused"
+                                    Command="{Binding EntryUnfocused}" CommandParameter="email"/>
+                            </Entry.Behaviors>
+
+                        </Entry>
+                        <Label x:Name="lblEmaReq" TextColor="Red" IsVisible="{Binding IsValidEmail}" Text="{Binding ValidEmailMsg, Mode=TwoWay}"/>
 
                         <Label Text="Clave:" FontSize="Medium" />
-                        <Entry Text="{Binding Clave, Mode=TwoWay}" Placeholder="Ingrese su clave" IsPassword="True" IsEnabled="{Binding IsEnabledTxt}" />
-                        <Label x:Name="lblUsuReq" TextColor="Red" IsVisible="False" Text="Clave es Obligatorio"/>
+                        <Entry Text="{Binding Clave, Mode=TwoWay}" Placeholder="Ingrese su clave" IsPassword="True" IsEnabled="{Binding IsEnabledTxt}" >
+                            <Entry.Behaviors>
+                                <toolkit:EventToCommandBehavior
+                                    EventName="Unfocused"
+                                    Command="{Binding EntryUnfocused}" CommandParameter="clave"/>
+                            </Entry.Behaviors>
+
+                        </Entry>
+                        <Label x:Name="lblClavReq" TextColor="Red" IsVisible="{Binding IsValidClave}" Text="Clave es Obligatorio"/>
 
                         <Label Text="Repita Clave:" FontSize="Medium" />
-                        <Entry Placeholder="Repita su clave" IsPassword="True"  IsEnabled="{Binding IsEnabledTxt}"/>
+                        <Entry Text="{Binding ClaveRepite, Mode=TwoWay}" Placeholder="Repita su clave" IsPassword="True"  IsEnabled="{Binding IsEnabledTxt}">
+                            <Entry.Behaviors>
+                                <toolkit:EventToCommandBehavior
+                                    EventName="Unfocused"
+                                    Command="{Binding EntryUnfocused}" CommandParameter="claveRep"/>
+                            </Entry.Behaviors>
+
+                        </Entry>
+                        <Label x:Name="lblClaveRep" TextColor="Red" IsVisible="{Binding IsValidClaveRep}" Text="Clave no coincide"/>
 
                         <Label Text="Teléfono:" FontSize="Medium" />
-                        <Entry Text="{Binding Telefono, Mode=TwoWay}" Placeholder="Ingrese su teléfono" Keyboard="Telephone"  IsEnabled="{Binding IsEnabledTxt}"/>
+                        <Entry Text="{Binding Telefono, Mode=TwoWay}" Placeholder="Ingrese su teléfono" Keyboard="Telephone"  IsEnabled="{Binding IsEnabledTxt}">
+                            <Entry.Behaviors>
+                                <toolkit:EventToCommandBehavior
+                                    EventName="Unfocused"
+                                    Command="{Binding EntryUnfocused}" CommandParameter="telefono"/>
+                            </Entry.Behaviors>
+
+                        </Entry>
+                        <Label x:Name="lblTelReq" TextColor="Red" IsVisible="{Binding IsValidTelefono}" Text="Teléfono es Obligatorio"/>
 
                         <Button x:Name="BtnRegistro" Text="Registrarse" Command="{Binding ComandoRegistrar}"  HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Margin="0,20,0,0" />
                     </StackLayout>

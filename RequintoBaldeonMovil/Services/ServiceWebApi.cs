@@ -14,16 +14,16 @@ namespace RequintoBaldeonMovil.Services
 {
     public static class ServiceWebApi
     {
-       // private const string UrlWebApi = "http://localhost:5000/api/";
+        // private const string UrlWebApi = "http://localhost:5000/api/";
 
 
-        private static  HttpClient cliente;//= CrearCliente(UrlWebApi);
+        private static HttpClient cliente;//= CrearCliente(UrlWebApi);
 
         public static void incializa(string UrlWebApi)
         {
-            cliente= CrearCliente(UrlWebApi);
+            cliente = CrearCliente(UrlWebApi);
         }
-        
+
 
 
         private static HttpClient CrearCliente(string url)
@@ -72,7 +72,7 @@ namespace RequintoBaldeonMovil.Services
 
             if (respuesta.IsSuccessStatusCode)
             {
-                string  json = await respuesta.Content.ReadAsStringAsync();
+                string json = await respuesta.Content.ReadAsStringAsync();
                 var item = JsonConvert.DeserializeObject<T>(json);
                 return item;
             }
@@ -90,7 +90,8 @@ namespace RequintoBaldeonMovil.Services
                 HttpResponseMessage respuesta = await cliente.PostAsync(controlador, contenido);
 
                 return (respuesta.IsSuccessStatusCode);
-            }catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
@@ -113,13 +114,14 @@ namespace RequintoBaldeonMovil.Services
                 {
                     return new List<Evento>();
                 }
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 throw ex;
             }
 
         }
-        public static async Task<string> Login(string controlador, string id,string pine) 
+        public static async Task<string> Login(string controlador, string id, string pine)
         {
             try
             {
@@ -134,6 +136,29 @@ namespace RequintoBaldeonMovil.Services
                 }
 
                 return "Servidor no disponible. Intente más tarde";
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
+
+        public static async Task<bool> ValidarEmailCedula(string controlador, string opt, string valor)
+        {
+            try
+            {
+                HttpResponseMessage respuesta = await cliente.GetAsync($"{controlador}/{opt}/{valor}");
+
+                if (respuesta.IsSuccessStatusCode)
+                {
+                    var contenido = await respuesta.Content.ReadAsStringAsync();
+
+                    return Convert.ToBoolean(contenido);
+                }
+
+                return false;
             }
             catch (Exception ex)
             {

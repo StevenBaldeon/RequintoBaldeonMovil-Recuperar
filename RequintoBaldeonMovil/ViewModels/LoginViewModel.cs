@@ -13,7 +13,9 @@ namespace RequintoBaldeonMovil.ViewModels
     public class LoginViewModel : BaseViewModel
     {
         private string user;
+        private string userValidate;
         private string password;
+        private string pwdValidate;
         private int usrUSU_CODIGO;
         object sender;
         public Command LoginCommand { get; set; }
@@ -47,6 +49,21 @@ namespace RequintoBaldeonMovil.ViewModels
             }
         }
 
+
+        public string UserValidate
+        {
+            get { return userValidate; }
+            set
+            {
+                userValidate = value;
+                OnPropertyChanged();
+
+            }
+        }
+
+
+
+
         public string Password
         {
             get { return password; }
@@ -67,6 +84,8 @@ namespace RequintoBaldeonMovil.ViewModels
 
             }
         }
+
+
 
 
 

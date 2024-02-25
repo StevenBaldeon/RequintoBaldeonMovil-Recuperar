@@ -1,4 +1,5 @@
-﻿using RequintoBaldeonMovil.Services;
+﻿using Acr.UserDialogs;
+using RequintoBaldeonMovil.Services;
 using RequintoBaldeonMovil.Views;
 using System;
 using Xamarin.Forms;
@@ -8,7 +9,7 @@ namespace RequintoBaldeonMovil
 {
     public partial class App : Application
     {
-        public static string WsUIurl = "http://192.168.1.8:5000/";
+        public static string WsUIurl = "http://192.168.1.35:5000/";
 
         public App()
         {
@@ -16,14 +17,15 @@ namespace RequintoBaldeonMovil
             ServiceWebApi.incializa(WsUIurl);
 
             DependencyService.Register<MockDataStore>();
+         //   UserDialogs.Instance.AlertAsync(App.Current.Properties.Keys.Count.ToString(), "Error al Ingresar", "OK");
             if ((App.Current.Properties.ContainsKey("USU_CODIGO") && App.Current.Properties.ContainsKey("USERNAME")))
             {
-                MainPage = new NavigationPage(new MainPage()); 
+                MainPage = new MainPage();
             }
             else
             {
-
                 MainPage = new NavigationPage(new LoginPage());
+                
 
             }
             
