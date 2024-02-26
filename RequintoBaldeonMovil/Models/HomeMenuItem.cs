@@ -17,6 +17,6 @@ namespace RequintoBaldeonMovil.Models
     {
         public MenuItemType Id { get; set;}
         public string Title { get; set;}
-        public string icon { get; set;}
+        public string Icon { get; set;}
     }
 }

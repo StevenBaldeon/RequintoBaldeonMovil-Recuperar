@@ -23,11 +23,11 @@ namespace RequintoBaldeonMovil.Views
             this.IsPresentedChange();
             menuItems = new List<HomeMenuItem>
             {
-                new HomeMenuItem {Id = MenuItemType.Inicio, Title="Inicio", icon="icon_about.png"},
-                 new HomeMenuItem {Id = MenuItemType.Eventos, Title="Eventos", icon="Eventos_Menu.png"},
-                new HomeMenuItem {Id = MenuItemType.Patrocinadores, Title="Patrocinadores", icon="Patrocinadores_Menu.png"},
-                new HomeMenuItem {Id = MenuItemType.RedesSociales, Title="Redes Sociales", icon="RedesSociales_Menu.png"},
-                new HomeMenuItem {Id = MenuItemType.Resena, Title="Reseña", icon="Resena_Menu.png"}
+                new HomeMenuItem {Id = MenuItemType.Inicio, Title="Inicio", Icon="icon_about.png"},
+                 new HomeMenuItem {Id = MenuItemType.Eventos, Title="Eventos", Icon="Eventos_Menu.png"},
+                new HomeMenuItem {Id = MenuItemType.Patrocinadores, Title="Patrocinadores", Icon="Patrocinadores_Menu.png"},
+                new HomeMenuItem {Id = MenuItemType.RedesSociales, Title="Redes Sociales", Icon="RedesSociales_Menu.png"},
+                new HomeMenuItem {Id = MenuItemType.Resena, Title="Reseña", Icon="Resena_Menu.png"}
             };
 
             ListViewMenu.ItemsSource=menuItems;

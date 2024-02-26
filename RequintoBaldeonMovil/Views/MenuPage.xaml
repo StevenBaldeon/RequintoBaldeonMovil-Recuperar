@@ -54,7 +54,7 @@
                     <ViewCell>
                         <!--<Grid Padding="10" >-->
                         <StackLayout VerticalOptions="FillAndExpand" Orientation="Horizontal" Padding="0,0,0,0">
-                            <Image Source="{Binding Icon}" WidthRequest="60" HeightRequest="45" />
+                            <Image Source="{Binding Icon}" WidthRequest="60" HeightRequest="45" Aspect="AspectFit"/>
                             <Label Text="{Binding Title}" FontSize="20" VerticalTextAlignment="Center" TextColor="Black"/>
                         </StackLayout>
                         <!--</Grid>-->
