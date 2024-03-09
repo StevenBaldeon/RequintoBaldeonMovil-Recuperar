@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RequintoBaldeonMovil.Views.HomePage"
+             Title="Inicio">
+            
+
+    <NavigationPage.TitleView >
+        <StackLayout Orientation="Horizontal" Spacing="10" >
+            <Label Text="Inicio"  FontAttributes="Bold" TextColor="White" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" />
+            <Image Source="Iso_Blanco.png" HeightRequest="50"  WidthRequest="100" HorizontalOptions="EndAndExpand" Margin="0,0,2,0"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Image Source="Background_Home.jpg" HorizontalOptions="CenterAndExpand" WidthRequest="565" />
+                <BoxView Color="#daa61b" Opacity="0.4" />
+            </Grid>
+
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <ImageButton x:Name="imgeventos" 
+                             Opacity="0.9" 
+                             BackgroundColor="White" 
+                             Source="Eventos_Inicio.png"
+                             Grid.Row="0" Grid.Column="0" 
+                             BorderColor="#daa61b" BorderWidth="1" 
+                             CornerRadius="5" 
+                             Clicked="imgeventos_Clicked">
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="Scale"
+                            Value="0.8" />
+                                </VisualState.Setters>
+                            </VisualState>
+
+                            <VisualState x:Name="Pressed">
+                                <VisualState.Setters>
+                                    <Setter Property="Scale"
+                            Value="0.75" />
+                                </VisualState.Setters>
+                            </VisualState>
+
+                        </VisualStateGroup>
+                    </VisualStateManager.VisualStateGroups>
+                </ImageButton>
+                <ImageButton x:Name="imgpatrocinadores" Opacity="0.9" BackgroundColor="White" Source="Patrocinadores_Inicio.png" Grid.Row="0" Grid.Column="1"  BorderColor="#daa61b" BorderWidth="1" CornerRadius="5"  Command="{Binding RegistroAlmuerzoCommand}" Clicked="imgpatrocinadores_Clicked">
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="Scale"
+                            Value="0.8" />
+                                </VisualState.Setters>
+                            </VisualState>
+
+                            <VisualState x:Name="Pressed">
+                                <VisualState.Setters>
+                                    <Setter Property="Scale"
+                            Value="0.75" />
+                                </VisualState.Setters>
+                            </VisualState>
+
+                        </VisualStateGroup>
+                    </VisualStateManager.VisualStateGroups>
+                </ImageButton>
+                <ImageButton x:Name="imgredessociales" Opacity="0.9" BackgroundColor="White" Source="RedesSociales_Inicio.png"  Grid.Row="1" Grid.Column="0"  BorderColor="#daa61b" BorderWidth="1" CornerRadius="5" Clicked="imgredessociales_Clicked">
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="Scale"
+                            Value="0.8" />
+                                </VisualState.Setters>
+                            </VisualState>
+
+                            <VisualState x:Name="Pressed">
+                                <VisualState.Setters>
+                                    <Setter Property="Scale"
+                            Value="0.75" />
+                                </VisualState.Setters>
+                            </VisualState>
+
+                        </VisualStateGroup>
+                    </VisualStateManager.VisualStateGroups>
+                </ImageButton>
+
+                <ImageButton x:Name="imgresena" Opacity="0.9" BackgroundColor="White" Source="Resena_Inicio.png"  Grid.Row="1" Grid.Column="1"  BorderColor="#daa61b" BorderWidth="1" CornerRadius="5" Clicked="imgresena_Clicked">
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="Scale"
+                            Value="0.8" />
+                                </VisualState.Setters>
+                            </VisualState>
+
+                            <VisualState x:Name="Pressed">
+                                <VisualState.Setters>
+                                    <Setter Property="Scale"
+                            Value="0.75" />
+                                </VisualState.Setters>
+                            </VisualState>
+
+                        </VisualStateGroup>
+                    </VisualStateManager.VisualStateGroups>
+                </ImageButton>
+            </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Image Source="Letras.png" Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Start"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

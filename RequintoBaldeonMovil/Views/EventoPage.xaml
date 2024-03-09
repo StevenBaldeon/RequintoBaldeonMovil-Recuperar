@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RequintoBaldeonMovil.Views.EventoPage"
+             Title="{Binding Nombre}">
+
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" Spacing="10">
+            <Label Text="Eventos"  FontAttributes="Bold" TextColor="White" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" />
+            <Image Source="Logo_Blanco.png" HeightRequest="50"  WidthRequest="100" HorizontalOptions="EndAndExpand" Margin="0,0,5,0"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <CollectionView ItemsSource="{Binding Eventos }">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+
+                            <!-- WebView -->
+                            <WebView 
+                             Grid.Row="0"
+                             Source="{Binding Ubicacion}"
+                             HeightRequest="400"
+                             WidthRequest="250"
+                             Navigated="WebView_Navigated"
+                             VerticalOptions="FillAndExpand"
+                             AbsoluteLayout.LayoutFlags="All"
+                             AbsoluteLayout.LayoutBounds="0,0,1,1" />
+
+                            <!-- Nombre -->
+                            <Label 
+                             Grid.Row="1" 
+                             Text="{Binding Nombre}" 
+                             HorizontalTextAlignment="Center" 
+                             FontSize="20"
+                             Margin="10,5,0,0"
+                             FontFamily="Serif" />
+
+                            <!-- Dirección -->
+                            <Label 
+                             Grid.Row="2" 
+                             HorizontalTextAlignment="Start" 
+                             FontSize="16"
+                             Margin="10,5,0,0">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="Dirección: " FontAttributes="Bold"  FontSize="16" />
+                                        <Span Text="{Binding Direccion}"  />
+                                    </FormattedString>
+                                </Label.FormattedText>
+
+                            </Label>
+
+                            <!-- Fecha y Hora -->
+                            <Label 
+                             Grid.Row="3"
+                             HorizontalTextAlignment="Start"
+                             FontSize="16"
+                             Margin="10,5,0,0">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="Fecha: " FontAttributes="Bold" FontSize="16" />
+                                        <Span Text="{Binding Fecha}"  />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+
+                            <!-- Fecha y Hora -->
+                            <Label 
+                             Grid.Row="4"
+                             HorizontalTextAlignment="Start"
+                             FontSize="16"
+                             Margin="10,5,0,0">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="Hora: " FontAttributes="Bold" FontSize="16" />
+                                        <Span Text="{Binding Hora}"  />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+
+
+                            <!--Precio-->
+                            <Label 
+                             
+                             Grid.Row="5"
+                             HorizontalOptions="Start"
+                             FontSize="16"
+                             Margin="10,5,0,0">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="Precio: " FontAttributes="Bold" FontSize="16" />
+                                        <Span Text="{Binding Precio}"/>
+                                        <Span Text=" USD " />
+                                    </FormattedString>
+                                </Label.FormattedText>
+
+                            </Label>
+
+                            <!-- Descripción -->
+                            <Label 
+                             Grid.Row="6" 
+                             HorizontalTextAlignment="Start" 
+                             FontSize="16"
+                             Margin="10,5,0,0">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="Descripción: " FontAttributes="Bold" FontSize="16" />
+                                        <Span Text="{Binding Descripcion}"  />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

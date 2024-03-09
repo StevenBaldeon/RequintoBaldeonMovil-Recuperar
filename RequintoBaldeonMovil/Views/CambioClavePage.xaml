@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RequintoBaldeonMovil.Views.CambioClavePage"
+              xmlns:toolkit="http://xamarin.com/schemas/2020/toolkit"
+             Title="Recuperar Contraseña">
+    <ContentPage.Content>
+        <Grid>
+            <Image Source="Background.jpg" Aspect="AspectFill" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Opacity="0.8" />
+        <Frame VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="#d9d9d9" Padding="50" Margin="5" CornerRadius="50">
+            <Frame.Content>
+                    <StackLayout x:Name="Layout" Padding="10">
+                        <Label Text="Clave:" FontSize="Medium" />
+                        <Entry Text="{Binding Clave, Mode=TwoWay}" Placeholder="Ingrese su clave" IsPassword="True" IsEnabled="{Binding IsEnabledTxt}" >
+                            <Entry.Behaviors>
+                                <toolkit:EventToCommandBehavior
+            EventName="Unfocused"
+            Command="{Binding EntryUnfocused}" CommandParameter="clave"/>
+                            </Entry.Behaviors>
+
+                        </Entry>
+                        <Label x:Name="lblClavReq" TextColor="Red" IsVisible="{Binding IsValidClave}" Text="Clave es Obligatorio"/>
+
+                        <Label Text="Repita Clave:" FontSize="Medium" />
+                        <Entry Text="{Binding ClaveRepite, Mode=TwoWay}" Placeholder="Repita su clave" IsPassword="True"  IsEnabled="{Binding IsEnabledTxt}">
+                            <Entry.Behaviors>
+                                <toolkit:EventToCommandBehavior
+            EventName="Unfocused"
+            Command="{Binding EntryUnfocused}" CommandParameter="claveRep"/>
+                            </Entry.Behaviors>
+
+                        </Entry>
+                        <Label x:Name="lblClaveRep" TextColor="Red" IsVisible="{Binding IsValidClaveRep}" Text="Clave no coincide"/>
+                        <Button x:Name="BtnConfirmarClave" Text="Confirmar" Command="{Binding ComandoRegistrar}"  HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Margin="0,20,0,0" />
+                    </StackLayout>
+                </Frame.Content>
+        </Frame>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

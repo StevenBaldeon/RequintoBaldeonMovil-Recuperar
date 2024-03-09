@@ -1,0 +1,59 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RequintoBaldeonMovil.Views.PatrocinadoresPage">
+    
+    <NavigationPage.TitleView >
+        <StackLayout Orientation="Horizontal" Spacing="10" >
+            <Label Text="Patrocinadores"  FontAttributes="Bold" TextColor="White" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" />
+            <Image Source="Logo_Blanco.png" HeightRequest="50"  WidthRequest="100" HorizontalOptions="EndAndExpand" Margin="0,0,5,0"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+    
+    
+    <ContentPage.Content>
+        <Grid>
+
+            <!-- Fondo de pantalla -->
+            <Image Source="Background_patrocinadores.jpg" Aspect="AspectFill" />
+            <BoxView Color="White" Opacity="0.4" />
+        <ScrollView>
+            <StackLayout Margin="20">
+                <Label Text="Nuestros Patrocinadores" FontSize="24" HorizontalOptions="Center" Margin="0,0,0,20" FontAttributes="Bold,Italic" FontFamily="Serif" TextColor="Black"/>
+
+                <!-- Lista de patrocinadores -->
+                <ListView ItemsSource="{Binding Patrocinadores}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="0,0,0,10">
+                                    
+                                            
+                                               
+                                                    <Image   Source="{Binding Logo}" 
+                                                             WidthRequest="100" 
+                                                             HeightRequest="150"
+                                                             VerticalOptions="Center"
+                                                             HorizontalOptions="Center" 
+                                                             Aspect="AspectFit">
+                                                        <Image.GestureRecognizers>
+                                                            <TapGestureRecognizer Command="{Binding HipervinculoCommand}" />
+                                                        </Image.GestureRecognizers>
+                                                    </Image>
+                                                    <Label  Text="{Binding Nombre}" 
+                                                            HorizontalOptions="Center" 
+                                                            VerticalOptions="Center" 
+                                                            FontAttributes="Bold" 
+                                                            Margin="10,0,0,0"/>
+                                                
+                                         
+                                   
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

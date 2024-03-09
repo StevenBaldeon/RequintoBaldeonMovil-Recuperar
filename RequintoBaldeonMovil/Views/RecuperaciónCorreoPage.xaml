@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RequintoBaldeonMovil.Views.RecuperaciónCorreoPage"
+             xmlns:toolkit="http://xamarin.com/schemas/2020/toolkit">
+    <ContentPage.Content>
+        <Grid>
+            <Image Source="Background.jpg" Aspect="AspectFill" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Opacity="0.8" />
+            <Frame VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="#d9d9d9" Padding="20" Margin="50" CornerRadius="50">
+                <Frame.Content>
+                    <StackLayout x:Name="Layout" Padding="10">
+                        <Label Text="Email:" FontSize="Medium" />
+                        <Entry Text="{Binding Email, Mode=TwoWay}" Placeholder="Ingrese su email" Keyboard="Email" IsEnabled="{Binding IsEnabledTxt}" >
+                            <Entry.Behaviors>
+                                <toolkit:EventToCommandBehavior
+            EventName="Unfocused"
+            Command="{Binding EntryUnfocused}" CommandParameter="email"/>
+                            </Entry.Behaviors>
+
+                        </Entry>
+                        <Label x:Name="lblEmaReq" TextColor="Red" IsVisible="{Binding IsValidEmail}" Text="{Binding ValidEmailMsg, Mode=TwoWay}"/>
+
+
+                        <Button x:Name="BtnConfirmarEmail" Text="Confirmar" Command="{Binding ComandoRegistrar}"  HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Margin="0,20,0,0" />
+                    </StackLayout>
+                </Frame.Content>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
