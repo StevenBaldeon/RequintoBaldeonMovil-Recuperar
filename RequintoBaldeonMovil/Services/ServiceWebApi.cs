@@ -145,7 +145,7 @@ namespace RequintoBaldeonMovil.Services
         }
 
 
-        public static async Task<bool> ValidarEmailCedula(string controlador, string opt, string valor)
+        public static async Task<decimal> ValidarEmailCedula(string controlador, string opt, string valor)
         {
             try
             {
@@ -155,10 +155,10 @@ namespace RequintoBaldeonMovil.Services
                 {
                     var contenido = await respuesta.Content.ReadAsStringAsync();
 
-                    return Convert.ToBoolean(contenido);
+                    return Convert.ToDecimal(contenido);
                 }
 
-                return false;
+                return 0;
             }
             catch (Exception ex)
             {

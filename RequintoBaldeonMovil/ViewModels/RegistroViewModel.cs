@@ -173,15 +173,18 @@ namespace RequintoBaldeonMovil.ViewModels
             }
             if (obj.ToString() == "cedula")
             {
+               
                 this.IsValidCedula = String.IsNullOrEmpty(this.Cedula) ? true : false;
-                this.IsValidCedula = await ServiceWebApi.ValidarEmailCedula("api/Validar", "C", this.Cedula);
-                this.ValidCedulaMsg = String.IsNullOrEmpty(this.Cedula) ? "Cédula es Obligatorio" : "Cédula ya registrada, consulte con el administrador";
-                         
+                decimal USU_CODIGO = String.IsNullOrEmpty(this.Cedula)?-1:await ServiceWebApi.ValidarEmailCedula("api/Validar", "C", this.Cedula);
+                this.IsValidCedula = (USU_CODIGO > 0 || USU_CODIGO == -1) ? true : false;
+                this.ValidCedulaMsg = String.IsNullOrEmpty(this.Cedula) ? "Cédula es Obligatorio" : USU_CODIGO > 0 ? "Cédula ya registrada, consulte con el administrador" : USU_CODIGO == -1 ? "Cédula Invalida" : "";
+
+
             }
             if (obj.ToString() == "email")
             {
                 this.IsValidEmail = String.IsNullOrEmpty(this.Email) ? true : false;
-                this.IsValidEmail = await ServiceWebApi.ValidarEmailCedula("api/Validar", "E", this.Email);
+                this.IsValidEmail = (String.IsNullOrEmpty(this.Email) ? -1 :await ServiceWebApi.ValidarEmailCedula("api/Validar", "E", this.Email)) != 0 ? true : false;
                 this.ValidEmailMsg = String.IsNullOrEmpty(this.Email) ? "Email es Obligatorio" : "Email ya registrado, consulte con el administrador";
 
             }
@@ -212,15 +215,16 @@ namespace RequintoBaldeonMovil.ViewModels
            
                 this.IsValidApellidos = String.IsNullOrEmpty(this.Apellidos) ? true : false;
 
-           
+            
                 this.IsValidCedula = String.IsNullOrEmpty(this.Cedula) ? true : false;
-                this.IsValidCedula = await ServiceWebApi.ValidarEmailCedula("api/Validar", "C", this.Cedula);
-                this.ValidCedulaMsg = String.IsNullOrEmpty(this.Cedula) ? "Cédula es Obligatorio" : "Cédula ya registrada, consulte con el administrador";
+            decimal USU_CODIGO = String.IsNullOrEmpty(this.Cedula) ? -1 : await ServiceWebApi.ValidarEmailCedula("api/Validar", "C", this.Cedula); 
+            this.IsValidCedula = (USU_CODIGO>0||USU_CODIGO==-1)?true:false;
+                this.ValidCedulaMsg = String.IsNullOrEmpty(this.Cedula) ? "Cédula es Obligatorio" :USU_CODIGO>0?"Cédula ya registrada, consulte con el administrador": USU_CODIGO == -1?"Cédula Invalida":"";
 
-
+            
                 this.IsValidEmail = String.IsNullOrEmpty(this.Email) ? true : false;
-                this.IsValidCedula = await ServiceWebApi.ValidarEmailCedula("api/Validar", "E", this.Email);
-                this.ValidEmailMsg = String.IsNullOrEmpty(this.Email) ? "Email es Obligatorio" : "Email ya registrado, consulte con el administrador";
+            this.IsValidEmail = (String.IsNullOrEmpty(this.Email) ? -1 : await ServiceWebApi.ValidarEmailCedula("api/Validar", "E", this.Email)) != 0 ? true : false;
+            this.ValidEmailMsg = String.IsNullOrEmpty(this.Email) ? "Email es Obligatorio" : "Email ya registrado, consulte con el administrador";
 
 
             this.IsValidClave = String.IsNullOrEmpty(this.Clave) ? true : false;

@@ -9,7 +9,7 @@ namespace RequintoBaldeonMovil
 {
     public partial class App : Application
     {
-        public static string WsUIurl = "http://192.168.1.26:5000/";
+        public static string WsUIurl = "http://192.168.1.23:5000/";
 
         public App()
         {
