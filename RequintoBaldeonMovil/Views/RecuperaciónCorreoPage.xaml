@@ -10,18 +10,13 @@
                 <Frame.Content>
                     <StackLayout x:Name="Layout" Padding="10">
                         <Label Text="Email:" FontSize="Medium" />
-                        <Entry Text="{Binding Email, Mode=TwoWay}" Placeholder="Ingrese su email" Keyboard="Email" IsEnabled="{Binding IsEnabledTxt}" >
-                            <Entry.Behaviors>
-                                <toolkit:EventToCommandBehavior
-            EventName="Unfocused"
-            Command="{Binding EntryUnfocused}" CommandParameter="email"/>
-                            </Entry.Behaviors>
-
+                        <Entry Text="{Binding Email, Mode=TwoWay}" Placeholder="Ingrese su email" Keyboard="Email" >
+                            
                         </Entry>
-                        <Label x:Name="lblEmaReq" TextColor="Red" IsVisible="{Binding IsValidEmail}" Text="{Binding ValidEmailMsg, Mode=TwoWay}"/>
+                        <Label x:Name="lblEmaReq" TextColor="Red"/>
 
 
-                        <Button x:Name="BtnConfirmarEmail" Text="Confirmar" Command="{Binding ComandoRegistrar}"  HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Margin="0,20,0,0" />
+                        <Button x:Name="BtnConfirmarEmail" Text="Recuperar" Command="{Binding RecoverCommand}"  HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Margin="0,20,0,0" />
                     </StackLayout>
                 </Frame.Content>
             </Frame>

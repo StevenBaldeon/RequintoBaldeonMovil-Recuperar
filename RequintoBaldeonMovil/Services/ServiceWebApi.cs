@@ -168,6 +168,28 @@ namespace RequintoBaldeonMovil.Services
         }
 
 
+        public static async Task<bool> Recover(string controlador, string id)
+        {
+            try
+            {
+                HttpResponseMessage respuesta = await cliente.GetAsync($"{controlador}/{id}");
+
+                if (respuesta.IsSuccessStatusCode)
+                {
+                    var contenido = await respuesta.Content.ReadAsStringAsync();
+                    Result result = JsonConvert.DeserializeObject<Result>(contenido);
+                    return Convert.ToInt32(result.msg) > 0?true:false;
+                }
+
+                return false;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
 
     }
 }

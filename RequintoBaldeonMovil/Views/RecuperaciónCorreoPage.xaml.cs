@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RequintoBaldeonMovil.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,7 @@ namespace RequintoBaldeonMovil.Views
         public RecuperaciónCorreoPage()
         {
             InitializeComponent();
+            this.BindingContext = new RecuperacionCorreoViewModel(this.Navigation);
         }
     }
 }
